@@ -1,0 +1,50 @@
+<div class="history-container">
+  <div class="history-header">
+    <h2>Historique des stocks</h2>
+    <p>Suivez toutes les entrées et sorties de stock de vos produits.</p>
+  </div>
+
+  <div class="history-table">
+    <h3>Les dernières opérations</h3>
+
+    @if (mouvementsTries().length === 0) {
+      <p class="empty-message">Aucun mouvement enregistré.</p>
+    } @else {
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>Artisan</th>
+              <th>Ancien stock</th>
+              <th>Nouveau stock</th>
+              <th>Mouvement</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (m of mouvementsTries(); track m.id) {
+              <tr>
+                <td class="product-name">{{ m.produitNom }}</td>
+                <td>{{ m.artisan }}</td>
+                <td>{{ m.ancienStock }}</td>
+                <td>{{ m.nouveauStock }}</td>
+
+                <td>
+                  @if (m.variation > 0) {
+                    <span class="entry">+{{ m.variation }} Entrée</span>
+                  } @else {
+                    <span class="exit">{{ m.variation }} Sortie</span>
+                  }
+                </td>
+
+                <td>{{ m.date | date:'dd/MM/yyyy HH:mm' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</div>

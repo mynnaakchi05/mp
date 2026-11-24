@@ -1,0 +1,248 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "nom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "categorie": "Gastronomie & Terroir",
+      "region": "Tozeur",
+      "artisan": "Maison El Nakhil",
+      "prix": 65,
+      "stock": 3,
+      "disponible": true,
+      "photo": "images/chocolats-dattes.png",
+      "description": "Assortiment raffiné de dattes Deglet Nour enrobées de chocolat noir, pignons de pin, pistaches et feuilles d'or comestibles.",
+      "dateAjout": "2026-10-18T09:00:00.000Z",
+      "commentaires": [
+        {
+          "auteur": "Youssef K.",
+          "message": "Idéal pour offrir, présentation royale.",
+          "note": 5,
+          "date": "2026-10-20T18:10:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nom": "Parure Traditionnelle Perles & Louiz d'Or",
+      "categorie": "Bijoux & Parures",
+      "region": "Tunis Médina",
+      "artisan": "Sami Ben Amor - Souk El Berka",
+      "prix": 185,
+      "stock": 6,
+      "disponible": true,
+      "photo": "images/collier-perles.jpg",
+      "description": "Collier plastron tissé de perles fines et médaillons ciselés dorés inspirés du patrimoine tunisien, accompagné de ses boucles assorties.",
+      "dateAjout": "2026-09-25T11:20:00.000Z",
+      "commentaires": []
+    },
+    {
+      "id": "4",
+      "nom": "Brûle-Parfum Céramique Peint à la Main",
+      "photo": "images/diffuseur-parfum.jpg",
+      "prix": 35,
+      "disponible": true,
+      "dateAjout": "2026-10-05T16:00:00.000Z",
+      "categorie": "Décoration & Bougies",
+      "region": "Sejnane & Nabeul",
+      "description": "Diffuseur de fondants parfumés en terre cuite émaillée blanc cassé avec motif papillon ocre et coupelle assortie.",
+      "artisan": "Potiers du Cap Bon",
+      "stock": 14,
+      "commentaires": []
+    },
+    {
+      "id": "5",
+      "nom": "Amplificateur Acoustique Gramophone en Bois",
+      "photo": "images/gramophone.jpg",
+      "prix": 140,
+      "disponible": true,
+      "dateAjout": "2026-10-22T12:00:00.000Z",
+      "categorie": "Art du Bois & Musique",
+      "region": "Sfax",
+      "description": "Support amplificateur passif pour smartphone sculpté dans du bois d'olivier et noyer, inspiré des gramophones d'époque.",
+      "artisan": "Ébénisterie El Medina",
+      "stock": 4,
+      "commentaires": []
+    },
+    {
+      "id": "6",
+      "nom": "Applique Murale Pleine Lune Relief 3D",
+      "photo": "images/lampe-lune.jpg",
+      "prix": 120,
+      "disponible": true,
+      "dateAjout": "2026-10-01T20:00:00.000Z",
+      "categorie": "Luminaires Artisanaux",
+      "region": "Hammamet",
+      "description": "Luminaire mural texturé à la main reproduisant les cratères lunaires avec éclairage LED chaud tamisé.",
+      "artisan": "Studio Lumière Tunisie",
+      "stock": 2,
+      "commentaires": []
+    },
+    {
+      "id": "7",
+      "nom": "Panier Terroir Mloukhiya, Pain Tabouna & Harissa",
+      "photo": "images/panier-terroir.jpg",
+      "prix": 55,
+      "disponible": true,
+      "dateAjout": "2026-10-28T08:30:00.000Z",
+      "categorie": "Gastronomie & Terroir",
+      "region": "Béja & Cap Bon",
+      "description": "Panier gourmand authentique : feuilles de corète séchées, pain tabouna traditionnel, harissa berbère au piment séché au soleil et olives.",
+      "artisan": "Coopérative Femmes Rurales du Nord",
+      "stock": 4,
+      "commentaires": []
+    },
+    {
+      "id": "8",
+      "nom": "Table Basse Zellige & Cuivre Martelé",
+      "categorie": "Mobilier & Zellige",
+      "region": "Kairouan",
+      "artisan": "Maâlem Ridha Trabelsi",
+      "prix": 320,
+      "stock": 4,
+      "disponible": true,
+      "photo": "images/table-zellige.jpg",
+      "description": "Guéridon artisanal à plateau circulaire incrusté de motifs géométriques traditionnels et piètement en bois sculpté.",
+      "dateAjout": "2026-09-15T15:00:00.000Z",
+      "commentaires": []
+    },
+    {
+      "id": "9",
+      "nom": "Sac Cabas Tissé Macramé & Raphia",
+      "categorie": "Maroquinerie & Tissage",
+      "region": "Djerba",
+      "artisan": "Atelier Houmt Souk",
+      "prix": 85,
+      "stock": 6,
+      "disponible": true,
+      "photo": "images/sac-macrame.jpg",
+      "description": "Sac à main structuré tissé main en fibres naturelles dorées avec poignées tressées.",
+      "dateAjout": "2026-10-10T13:45:00.000Z",
+      "commentaires": []
+    }
+  ],
+  "administrateurs": [
+    {
+      "id": "admin-1",
+      "email": "mynnaakchi@gmail.com",
+      "password": "admin1234"
+    },
+    {
+      "id": "admin-2",
+      "email": "TrikiAmel@gmail.com",
+      "password": "admin123"
+    }
+  ],
+  "mouvementsStock": [
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 1,
+      "nouveauStock": 2,
+      "variation": 1,
+      "date": "2026-11-24T11:26:35.321Z",
+      "id": "kATGAAlcd2Y"
+    },
+    {
+      "produitId": "7",
+      "produitNom": "Panier Terroir Mloukhiya, Pain Tabouna & Harissa",
+      "artisan": "Coopérative Femmes Rurales du Nord",
+      "ancienStock": 6,
+      "nouveauStock": 5,
+      "variation": -1,
+      "date": "2026-11-24T11:34:48.248Z",
+      "id": "lj328quBuXQ"
+    },
+    {
+      "produitId": "7",
+      "produitNom": "Panier Terroir Mloukhiya, Pain Tabouna & Harissa",
+      "artisan": "Coopérative Femmes Rurales du Nord",
+      "ancienStock": 5,
+      "nouveauStock": 4,
+      "variation": -1,
+      "date": "2026-11-24T11:34:48.668Z",
+      "id": "Afi7SSv5ST8"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 2,
+      "nouveauStock": 1,
+      "variation": -1,
+      "date": "2026-11-24T12:13:51.980Z",
+      "id": "8rpTfT5rAuM"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 1,
+      "nouveauStock": 2,
+      "variation": 1,
+      "date": "2026-11-24T13:08:42.245Z",
+      "id": "r4FqVo6W5S4"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 3,
+      "nouveauStock": 2,
+      "variation": -1,
+      "date": "2026-11-24T13:11:05.411Z",
+      "id": "wlDIwEdgip8"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 2,
+      "nouveauStock": 3,
+      "variation": 1,
+      "date": "2026-11-24T13:11:11.438Z",
+      "id": "cuLtOM2F34U"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 3,
+      "nouveauStock": 2,
+      "variation": -1,
+      "date": "2026-11-24T13:11:18.741Z",
+      "id": "SefDXbccMdo"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 2,
+      "nouveauStock": 3,
+      "variation": 1,
+      "date": "2026-11-24T13:11:36.085Z",
+      "id": "FMBBLB0q2L8"
+    },
+    {
+      "produitId": "3",
+      "produitNom": "Parure Traditionnelle Perles & Louiz d'Or",
+      "artisan": "Sami Ben Amor - Souk El Berka",
+      "ancienStock": 4,
+      "nouveauStock": 5,
+      "variation": 1,
+      "date": "2026-11-24T13:43:19.535Z",
+      "id": "t7dViGo5H1U"
+    },
+    {
+      "produitId": "3",
+      "produitNom": "Parure Traditionnelle Perles & Louiz d'Or",
+      "artisan": "Sami Ben Amor - Souk El Berka",
+      "ancienStock": 5,
+      "nouveauStock": 6,
+      "variation": 1,
+      "date": "2026-11-24T13:43:59.874Z",
+      "id": "2u_G7t1mj38"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

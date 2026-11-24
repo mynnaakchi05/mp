@@ -1,0 +1,43 @@
+<div class="container mt-5 mb-5">
+  @if (product(); as p) {
+    <div class="row g-5">
+      <div class="col-md-6">
+        <img [src]="p.photo" [alt]="p.nom" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <span>{{ p.categorie }}</span>
+        <h1>{{p.nom }}</h1>
+        <h2>{{p.prix | prixTND }}</h2>
+        <p>{{ p.description }}</p>
+        <hr>
+        <p>Artisan : {{ p.artisan }}</p>
+        <p>Région : {{ p.region }}</p>
+        <p>Stock : {{ p.stock }}</p>
+        <p>
+          Disponibilité :
+          {{ p.disponible ? 'Disponible' : 'Indisponible' }}
+        </p>
+        <p>
+          <p>Date d'ajout : {{ p.dateAjout | date:'dd/MM/yyyy' }}</p>
+        
+        <a routerLink="/boutique" class="btn btn-secondary">
+          Retour à la boutique
+        </a>
+      </div>
+    </div>
+    <hr class="my-5">
+    <h3>Avis des clients</h3>
+    @for (c of p.commentaires; track $index) {
+      <div class="border rounded p-3 mb-3">
+        <strong>{{ c.auteur }}</strong>
+        <p>{{ c.message }}</p>
+        <p>Note : {{ c.note }}/5</p>
+        <small>{{ c.date }}</small>
+      </div>
+    } @empty {
+      <p>Aucun commentaire pour ce produit.</p>
+    }
+  } @else {
+    <p>Chargement du produit...</p>
+  }
+</div>

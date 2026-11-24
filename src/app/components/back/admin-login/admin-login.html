@@ -1,0 +1,90 @@
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card border-0 shadow-sm rounded-4 p-4" style="background-color: var(--ts-beige, #f2e8d8);">
+        <div class="text-center mb-4">
+          <span class="badge rounded-pill px-3 py-2 mb-2" style="background-color: var(--ts-bordeaux, #6e2639); color: #ffffff;">
+            <i class="bi bi-shield-lock me-1"></i>
+            Espace Administration
+          </span>
+          <h2 class="fw-bold mb-1">Connexion TuniSanat</h2>
+          <p class="small mb-0" style="color: var(--ts-texte-adouci, #635547);">
+            Accès réservé à l'administrateur
+          </p>
+        </div>
+        <form [formRoot]="loginForm" (submit)="onConnexion()">
+          @if (erreur()) {
+            <div class="alert alert-danger text-center" role="alert">
+              {{ erreur() }}
+            </div>
+          }
+          <div class="mb-3">
+
+            <label for="email" class="form-label fw-semibold">
+              Adresse e-mail
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              class="form-control"
+              placeholder="exemple@domaine.tn"
+              [formField]="loginForm.email"
+            />
+            @if (loginForm.email().invalid() && loginForm.email().touched()) {
+
+              @for (err of loginForm.email().errors(); track $index) {
+
+                <div class="alert alert-danger py-2 px-3 mt-2 small mb-0">
+                  {{ err.message }}
+                </div>
+
+              }
+
+            }
+
+          </div>
+
+          <div class="mb-4">
+
+            <label for="password" class="form-label fw-semibold">
+              Mot de passe
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="••••••••"
+              [formField]="loginForm.password"
+            />
+
+            @if (loginForm.password().invalid() && loginForm.password().touched()) {
+
+              @for (err of loginForm.password().errors(); track $index) {
+
+                <div class="alert alert-danger py-2 px-3 mt-2 small mb-0">
+                  {{ err.message }}
+                </div>
+
+              }
+
+            }
+
+          </div>
+
+          <button
+            type="submit"
+            class="btn w-100 py-2 fw-semibold text-white"
+            style="background-color: var(--ts-terracotta, #c45d3b);"
+            [disabled]="loginForm().invalid()"
+          >
+            <i class="bi bi-box-arrow-in-right me-1"></i>
+            Se connecter
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

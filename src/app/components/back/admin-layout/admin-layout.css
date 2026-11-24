@@ -1,0 +1,31 @@
+.admin-container {
+  min-height: 75vh;
+  background-color: var(--fond);
+  color: var(--texte);
+}
+.admin-navbar {
+  background-color: var(--carte);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.admin-navbar h3 {
+  color: var(--titre);
+  margin: 0;
+}
+
+.admin-navbar a {
+  color: var(--texte);
+  text-decoration: none;
+}
+
+.admin-navbar a:hover {
+  color: var(--titre);
+}
+
+.admin-content {
+  padding: 30px;
+}

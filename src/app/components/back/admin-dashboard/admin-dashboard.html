@@ -1,0 +1,146 @@
+
+<div class="dashboard">
+
+  <!-- En-tête -->
+  <div class="dashboard-header">
+    <div>
+      <h2>Tableau de bord</h2>
+      <p>Bienvenue dans l'espace d'administration de TuniSanat.</p>
+    </div>
+  </div>
+
+  @if (erreur()) {
+    <div class="alert-error">
+      {{ erreur() }}
+    </div>
+  }
+
+  <!-- Statistiques -->
+  <div class="stats-container">
+
+    <div class="stat-card">
+      <div class="stat-icon produits-icon">📦</div>
+      <div>
+        <h3>{{ totalProduits() }}</h3>
+        <p>Total des produits</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon disponibles-icon">✓</div>
+      <div>
+        <h3>{{ produitsDisponibles() }}</h3>
+        <p>Produits disponibles</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon normal-icon">✓</div>
+      <div>
+        <h3>{{ produitsStockNormal() }}</h3>
+        <p>Stock normal</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon faible-icon">⚠</div>
+      <div>
+        <h3>{{ produitsStockFaible() }}</h3>
+        <p>Stock faible</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon rupture-icon">!</div>
+      <div>
+        <h3>{{ produitsRupture() }}</h3>
+        <p>Rupture de stock</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Gestion des stocks -->
+  <div class="products-section">
+
+    <h3>Gestion des produits et des stocks</h3>
+    <p class="section-description">
+      Consultez les produits, leurs artisans et modifiez les quantités disponibles.
+    </p>
+
+    @if (produits().length === 0 && !erreur()) {
+      <p class="empty-message">Aucun produit disponible.</p>
+    }
+
+    @if (produits().length > 0) {
+
+      <div class="table-container">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Produit</th>
+              <th>Catégorie</th>
+              <th>Artisan</th>
+              <th>Prix</th>
+              <th>Stock</th>
+              <th>État</th>
+              <th>Modifier le stock</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            @for (produit of produits(); track produit.id) {
+
+              <tr>
+                <td class="product-name">{{ produit.nom }}</td>
+
+                <td>{{ produit.categorie }}</td>
+
+                <td>{{ produit.artisan }}</td>
+
+                <td><p>{{ produit.prix | prixTND }}</p></td>
+
+                <td class="stock-quantity">{{ produit.stock }}</td>
+
+                <td>
+                  @if (produit.stock === 0) {
+                    <span class="status rupture">Rupture</span>
+                  } @else if (produit.stock < 3) {
+                    <span class="status faible">Stock faible</span>
+                  } @else {
+                    <span class="status disponible">Normal</span>
+                  }
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn-stock"
+                    (click)="modifierStock(produit, -1)"
+                    [disabled]="produit.stock === 0">
+                    −
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn-stock"
+                    (click)="modifierStock(produit, 1)">
+                    +
+                  </button>
+                </td>
+
+              </tr>
+
+            }
+
+          </tbody>
+        </table>
+
+      </div>
+    }
+
+  </div>
+
+</div>

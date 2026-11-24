@@ -1,0 +1,54 @@
+.site {
+  --fond: #ffffff;
+  --texte: #26352d;
+  --carte: #f5f5f5;
+  --titre: #b45a3c;
+
+  background-color: var(--fond);
+  color: var(--texte);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s;
+}
+
+.dark-theme {
+  --fond: #17221c;
+  --texte: #ffffff;
+  --carte: #26352d;
+  --titre: #edbd91;
+}
+.page-content {
+  flex: 1;
+}
+.navbar,
+.footer {
+  background-color: var(--carte);
+  color: var(--texte);
+}
+
+.navbar a,
+.footer a {
+  color: var(--texte);
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.footer a:hover {
+  color: var(--titre);
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.btn-theme {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  background-color: #b45a3c;
+  color: rgb(90, 66, 66);
+}
+

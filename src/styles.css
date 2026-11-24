@@ -1,1 +1,328 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #F7F2E8;
+  font-family: Arial, sans-serif;
+}
+
+/* Marge avant le footer */
+footer {
+  margin-top: 64px;
+}
+
+/* LIGHT THEME */
+
+.page {
+  min-height: 100vh;
+  background-color: #F7F2E8;
+  color: #292B27;
+  transition: 0.3s;
+}
+
+.titre {
+  color: #24483B;
+  font-weight: bold;
+}
+
+.prix {
+  color: #24483B;
+  font-weight: bold;
+}
+
+/* PRODUCT CARD */
+
+.card {
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  color: #292B27;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(36, 72, 59, 0.15) !important;
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #24483B;
+}
+
+/* DETAILS BUTTON */
+
+.btn-details {
+  background-color: #A64F36;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 15px;
+  transition: 0.3s;
+}
+
+.btn-details:hover {
+  background-color: #24483B;
+  color: white;
+}
+
+/* LIKE BUTTON */
+
+.like-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.like-btn:hover {
+  transform: scale(1.12);
+  background-color: #FCE8E5;
+}
+
+.like-btn i {
+  font-size: 19px;
+  color: #A64F36;
+}
+
+/* THEME BUTTON */
+
+.btn-theme {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 17px;
+  border-radius: 30px;
+  border: 1px solid #D9D0C0;
+  background-color: #FFFFFF;
+  color: #24483B;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-theme:hover {
+  background-color: #24483B;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-theme i {
+  font-size: 17px;
+}
+
+/* DARK THEME (HAUT CONTRASTE + LISIBILITÉ GARANTIE) */
+
+.dark-theme {
+  background-color: #1F2723;
+  color: #F5EFE4;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6,
+.dark-theme .titre {
+  color: #FFF9F0;
+}
+
+.dark-theme p,
+.dark-theme span,
+.dark-theme label {
+  color: #EAE2D3;
+}
+
+.dark-theme .card {
+  background-color: #2A342F;
+  color: #F5EFE4;
+}
+
+.dark-theme .card-title,
+.dark-theme .card-body h1,
+.dark-theme .card-body h2,
+.dark-theme .card-body h3,
+.dark-theme .card-body h4,
+.dark-theme .card-body h5,
+.dark-theme .card-body h6 {
+  color: #FFF9F0;
+}
+
+.dark-theme .prix {
+  color: #E8B87D;
+}
+
+.dark-theme .text-secondary,
+.dark-theme .text-muted {
+  color: #C5BDB0 !important;
+}
+
+.dark-theme .btn-theme {
+  background-color: #2A342F;
+  color: #F5EFE4;
+  border-color: #4A5A52;
+}
+
+.dark-theme .btn-theme:hover {
+  background-color: #E8B87D;
+  color: #1A211D;
+  border-color: #E8B87D;
+}
+
+.dark-theme .like-btn {
+  background-color: #2A342F;
+}
+
+.dark-theme .like-btn i {
+  color: #E8B87D;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+  .btn-theme {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: #FFFFFF;
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  color: #24483B;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.navbar-brand i {
+  color: #A64F36;
+}
+
+.nav-link {
+  color: #24483B;
+  font-weight: 500;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #A64F36;
+}
+
+.dark-theme .navbar {
+  background-color: #26302B;
+}
+
+.dark-theme .navbar-brand,
+.dark-theme .nav-link {
+  color: #F5EFE4;
+}
+
+.dark-theme .nav-link:hover,
+.dark-theme .nav-link.active {
+  color: #E8B87D;
+}
+
+.dark-theme .navbar-toggler {
+  border-color: #E8B87D;
+}
+
+.dark-theme .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Mode sombre via body.dark-mode */
+
+body.dark-mode {
+  background-color: #1F2723;
+  color: #F5EFE4;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode .titre {
+  color: #FFF9F0;
+}
+
+body.dark-mode .navbar {
+  background-color: #26302B !important;
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand {
+  color: #F5EFE4 !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: #E8B87D !important;
+}
+
+body.dark-mode .card {
+  background-color: #2E3934;
+  color: #F5EFE4;
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-body h1,
+body.dark-mode .card-body h2,
+body.dark-mode .card-body h3,
+body.dark-mode .card-body h4,
+body.dark-mode .card-body h5,
+body.dark-mode .card-body h6 {
+  color: #FFF9F0;
+}
+
+body.dark-mode footer {
+  background-color: #1A211D;
+  color: #EAE2D3;
+}
+
+body.dark-mode footer a,
+.dark-theme footer a {
+  color: #E8B87D;
+}
+
+body.dark-mode footer a:hover,
+.dark-theme footer a:hover {
+  color: #FFF9F0;
+}
+.dark-theme .form-label.fw-semibold,
+body.dark-mode .form-label.fw-semibold {
+  color: #1F2723 !important;
+}
+:host-context(.dark-theme) label.form-label.fw-semibold,
+:host-context(.dark-mode) label.form-label.fw-semibold {
+  color: #1F2723 !important;
+}
