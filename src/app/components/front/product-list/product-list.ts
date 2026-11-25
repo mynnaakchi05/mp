@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal, computed } from '@angular/core';
+import { Component,OnInit,inject, signal,computed } from '@angular/core';
 import { ProductService } from '../../../services/product';
 import { ProductCard } from '../product-card/product-card';
 
@@ -17,7 +17,7 @@ export class ProductList implements OnInit {
   produitsFiltres=computed(()=>{return this.produits().filter(p=>{
       const nomOK=p.nom.toLowerCase().includes(this.nomRecherche().toLowerCase());
       const prixOK=this.prixMax()==''||p.prix<=Number(this.prixMax());
-      return nomOK && prixOK;
+      return nomOK&&prixOK;
     });
   });
   ngOnInit() {

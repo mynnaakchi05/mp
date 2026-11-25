@@ -9,14 +9,14 @@
   </div>
   <h3 class="titre mb-4">Nos produits disponibles</h3>
   <div class="row g-4">
-    @for (p of produits();track p.id){
-      @if (p.disponible && p.stock > 0){
+    @for(p of produits();track p.id){
+      @if (p.disponible && p.stock>0){
         <div class="col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm">
             <img [src]="p.photo" class="card-img-top" alt="Produit">
             <div class="card-body text-center">
-              <h5>{{ p.nom}}</h5>
-              <p class="fw-bold">{{ p.prix | prixTND }}</p>
+              <h5>{{p.nom}}</h5>
+              <p class="fw-bold">{{p.prix|prixTND}}</p>
               <button class="btn btn-details" (click)="ajouterProduit(p)">
                 Ajouter au coffret
               </button>
@@ -28,17 +28,17 @@
   </div>
   <hr class="my-5">
   <h3 class="titre mb-4">Mon coffret personnalisé</h3>
-  @if (produitsSelectionnes().length==0){
+  @if(produitsSelectionnes().length===0){
     <p class="text-secondary">
       Votre coffret est encore vide.
     </p>
-  }@else{
-    @for (p of produitsSelectionnes(); track p.id) {
+  } @else{
+    @for(p of produitsSelectionnes();track p.id){
       <div class="d-flex justify-content-between align-items-center border-bottom py-3">
         <div>
-          <strong>{{ p.nom }}</strong>
+          <strong>{{p.nom}}</strong>
           <span class="text-secondary ms-2">
-            {{p.prix }} DT
+            {{p.prix|prixTND}}
           </span>
         </div>
         <button class="btn btn-danger btn-sm" (click)="retirerProduit(p)">
@@ -49,13 +49,9 @@
   }
   <div class="text-end mt-4">
     <h3 class="titre">
-      Total :{{ total()| prixTND }}
+      Total :{{total()|prixTND}}
     </h3>
   </div>
-
 </div>
-
-
-
 
 

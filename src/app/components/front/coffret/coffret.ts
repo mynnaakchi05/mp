@@ -2,6 +2,7 @@ import { Component, inject, signal, computed,OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
 import { ProductService } from '../../../services/product';
 import { PrixTNDPipe } from '../../../pipes/prix-tnd-pipe';
+
 @Component({
   selector: 'app-coffret',
   standalone: true,
@@ -40,3 +41,4 @@ export class Coffret implements OnInit{
 
 
 }
+

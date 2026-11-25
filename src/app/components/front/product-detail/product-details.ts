@@ -1,9 +1,10 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, OnInit,inject, signal } from '@angular/core';
+import { ActivatedRoute,RouterLink } from '@angular/router';
 import { ProductService } from '../../../services/product';
 import { Product } from '../../../models/product';
 import { DatePipe } from '@angular/common';
 import { PrixTNDPipe } from '../../../pipes/prix-tnd-pipe';
+
 @Component({
   selector: 'app-product-details',
   standalone: true,
@@ -14,8 +15,7 @@ import { PrixTNDPipe } from '../../../pipes/prix-tnd-pipe';
 export class ProductDetails implements OnInit {
   private ps=inject(ProductService);
   private route=inject(ActivatedRoute);
-  product=signal<Product | null>(null);
-
+  product=signal<Product|null>(null);
   ngOnInit():void{
     const id=this.route.snapshot.paramMap.get('id');
     if(id){
@@ -26,3 +26,4 @@ export class ProductDetails implements OnInit {
     }
   }
 }
+

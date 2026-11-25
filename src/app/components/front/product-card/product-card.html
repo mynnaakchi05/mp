@@ -1,22 +1,23 @@
 <div class="product-card">
   <div class="image-container">
     <img [src]="produit().photo" [alt]="produit().nom"  class="product-image">
-    @if (produit().disponible && produit().stock>0) {
+    @if(produit().disponible && produit().stock>0){
       <span class="availability available">Disponible</span>
-    } @else{
+    }@else{
       <span class="availability unavailable">Épuisé</span>
     }
   </div>
   <div class="product-info">
     <span class="category">{{produit().categorie}}</span>
-    <h3>{{ produit().nom }}</h3>
+    <h3>{{produit().nom}}</h3>
     <p class="region">📍{{produit().region}}</p>
     <div class="product-footer">
-      <span class="price"><p>{{ produit().prix | prixTND }}</p></span>
+      <span class="price"><p>{{produit().prix| prixTND}}</p></span>
       <button class="details-btn" [routerLink]="['/produit',produit().id]">
         Voir détails <i class="bi bi-arrow-right"></i>
       </button>
     </div>
   </div>
 </div>
+
 

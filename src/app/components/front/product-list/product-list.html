@@ -4,19 +4,16 @@
     <h1>Découvrez nos produits</h1>
     <p>Des créations authentiques, faites avec passion par nos artisans.</p>
   </div>
-
   <div class="search-container">
     <h4>Rechercher un produit</h4>
-    <input type="text" class="form-control mb-3" placeholder="Nom du produit" #nom 
-    [value]="nomRecherche()" (input)="nomRecherche.set(nom.value)">
-
+    <input type="text" class="form-control mb-3" placeholder="Nom du produit" #nom
+      [value]="nomRecherche()" (input)="nomRecherche.set(nom.value)">
     <input type="number" class="form-control mb-3" placeholder="Prix maximum en DT" #prix
       [value]="prixMax()" (input)="prixMax.set(prix.value)">
-
-    <button class="clear-btn" (click)="effacerRecherche()">Effacer la recherche </button>
+    <button class="clear-btn" (click)="effacerRecherche()">Effacer la recherche</button>
   </div>
   <p class="results-count">
-    {{produitsFiltres().length}}produit(s) trouve(s)
+    {{produitsFiltres().length}} produit(s) trouvé(s)
   </p>
   <div class="row g-4">
     @for (p of produitsFiltres(); track p.id) {
@@ -32,3 +29,6 @@
     }
   </div>
 </div>
+
+
+

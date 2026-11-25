@@ -1,20 +1,19 @@
 <section class="container py-3">
-  <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
-    <h3 class="fw-bold mb-0">Gestion des produits</h3>
-    <button type="button" class="btn btn-outline-secondary btn-sm" (click)="preparerAjout()">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold">Gestion des produits</h3>
+    <button class="btn btn-outline-secondary btn-sm" type="button"
+      (click)="preparerAjout()">
       Nouveau produit
     </button>
   </div>
-  <div class="mb-4">
-    <input
-      type="search"
-      class="form-control"
-      placeholder="Rechercher par nom et categorie.."
-      [value]="recherche()"
-      #rechercheInput 
-      (input)="onRechercheChange(rechercheInput.value)">    
-  </div>
-  <!-- Liste / Tableau CRUD -->
+  <input
+    type="search"
+    class="form-control mb-4"
+    placeholder="Rechercher par nom ou catégorie..."
+    [value]="recherche()"
+    #rechercheInput
+    (input)="onRechercheChange(rechercheInput.value)"
+  >
   <div class="table-responsive">
     <table class="table table-bordered align-middle">
       <thead>
@@ -30,33 +29,33 @@
       <tbody>
         @for (p of produitsFiltres(); track p.id) {
           <tr>
-            <td>{{ p.nom }}</td>
-            <td>{{ p.categorie }}</td>
-            <td>{{ p.prix | currency : 'TND ' }}</td>
-            <td>{{ p.stock }}</td>
+            <td>{{p.nom}}</td>
+            <td>{{p.categorie}}</td>
+            <td>{{p.prix | currency:'TND '}}</td>
+            <td>{{p.stock}}</td>
             <td>
-              <span
-                class="badge"
-                [class]="{
-                  'bg-success': p.disponible,
-                  'bg-danger': !p.disponible
-                }"
-              >
-                {{ p.disponible ? 'Disponible' : 'Indisponible' }}
-              </span>
+              @if (p.disponible) {
+                <span class="badge bg-success">Disponible</span>
+              } @else {
+                <span class="badge bg-danger">Indisponible</span>
+              }
             </td>
-            <td class="d-flex gap-2">
-              <button type="button" class="btn btn-sm btn-warning" (click)="preparerModification(p)">
+            <td>
+              <button class="btn btn-warning btn-sm me-2" type="button"
+                (click)="preparerModification(p)">
                 Modifier
               </button>
-              <button type="button" class="btn btn-sm btn-danger" (click)="onSupprimer(p.id)">
+              <button class="btn btn-danger btn-sm" type="button"
+                (click)="onSupprimer(p.id)">
                 Supprimer
               </button>
             </td>
           </tr>
         } @empty {
           <tr>
-            <td colspan="6" class="text-center text-muted">Aucun produit trouvé.</td>
+            <td colspan="6" class="text-center text-muted">
+              Aucun produit trouvé.
+            </td>
           </tr>
         }
       </tbody>
@@ -64,98 +63,96 @@
   </div>
   <div class="card border-0 shadow-sm p-3 mb-4">
     <h5 class="fw-bold mb-3">
-      {{ idEnEdition() ? 'Modifier le produit' : 'Ajouter un produit' }}
+      {{idEnEdition() ? 'Modifier le produit' : 'Ajouter un produit'}}
     </h5>
     <form [formRoot]="productForm" (submit)="onEnregistrer()" class="row g-3">
       <div class="col-md-6">
         <label class="form-label">Nom</label>
-        <input type="text"  id="nomProduit" class="form-control" [formField]="productForm.nom" />
+        <input id="nomProduit" type="text" class="form-control"
+          [formField]="productForm.nom">
         @if (productForm.nom().invalid() && productForm.nom().touched()) {
           @for (err of productForm.nom().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-6">
         <label class="form-label">Catégorie</label>
-        <input type="text" class="form-control" [formField]="productForm.categorie" />
+        <input type="text" class="form-control"
+          [formField]="productForm.categorie">
         @if (productForm.categorie().invalid() && productForm.categorie().touched()) {
           @for (err of productForm.categorie().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-6">
         <label class="form-label">Région</label>
-        <input type="text" class="form-control" [formField]="productForm.region" />
+        <input type="text" class="form-control"
+          [formField]="productForm.region">
         @if (productForm.region().invalid() && productForm.region().touched()) {
           @for (err of productForm.region().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-6">
         <label class="form-label">Artisan</label>
-        <input type="text" class="form-control" [formField]="productForm.artisan" />
+        <input type="text" class="form-control"
+          [formField]="productForm.artisan">
         @if (productForm.artisan().invalid() && productForm.artisan().touched()) {
           @for (err of productForm.artisan().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-4">
         <label class="form-label">Prix</label>
-        <input type="number" step="0.01" class="form-control" [formField]="productForm.prix" />
+        <input type="number" step="0.01" class="form-control"
+          [formField]="productForm.prix">
         @if (productForm.prix().invalid() && productForm.prix().touched()) {
           @for (err of productForm.prix().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-4">
         <label class="form-label">Stock</label>
-        <input type="number" class="form-control" [formField]="productForm.stock" />
+        <input type="number" class="form-control"
+          [formField]="productForm.stock">
         @if (productForm.stock().invalid() && productForm.stock().touched()) {
           @for (err of productForm.stock().errors(); track $index) {
-            <div class="text-danger small mt-1">{{ err.message }}</div>
+            <div class="text-danger small">{{err.message}}</div>
           }
         }
       </div>
-
       <div class="col-md-4">
-        <label class="form-label">Photo (URL ou chemin)</label>
-        <input type="text" class="form-control" [formField]="productForm.photo" />
+        <label class="form-label">Photo</label>
+        <input type="text" class="form-control"
+          [formField]="productForm.photo">
       </div>
-
       <div class="col-12">
         <label class="form-label">Description</label>
-        <textarea rows="2" class="form-control" [formField]="productForm.description"></textarea>
+        <textarea rows="2" class="form-control"
+          [formField]="productForm.description"></textarea>
       </div>
-
       <div class="col-12">
         <div class="form-check">
-          <input
-            id="dispoCheck"
-            type="checkbox"
-            class="form-check-input"
-            [formField]="productForm.disponible"
-          />
-          <label for="dispoCheck" class="form-check-label">Disponible à la vente</label>
+          <input id="dispoCheck" type="checkbox" class="form-check-input"
+            [formField]="productForm.disponible">
+          <label for="dispoCheck" class="form-check-label">
+            Disponible à la vente
+          </label>
         </div>
       </div>
-
       <div class="col-12">
-        <button type="submit" class="btn btn-primary" [disabled]="productForm().invalid()">
-          {{ idEnEdition() ? 'Mettre à jour' : 'Ajouter' }}
+        <button type="submit" class="btn btn-primary"
+          [disabled]="productForm().invalid()">
+          {{idEnEdition() ? 'Mettre à jour' : 'Ajouter'}}
         </button>
       </div>
     </form>
   </div>
-
-  
 </section>
+
+

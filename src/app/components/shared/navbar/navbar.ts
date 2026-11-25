@@ -10,9 +10,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Navbar {
   modeSombre=false;
-  changerMode() {
+  changerMode(){
     this.modeSombre=!this.modeSombre;
-    if (this.modeSombre) {
+    if(this.modeSombre){
       document.body.classList.add('dark-mode');
     }else{
       document.body.classList.remove('dark-mode');

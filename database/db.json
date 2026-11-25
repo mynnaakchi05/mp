@@ -124,7 +124,7 @@
     {
       "id": "admin-1",
       "email": "mynnaakchi@gmail.com",
-      "password": "admin1234"
+      "password": "admin123"
     },
     {
       "id": "admin-2",
@@ -242,6 +242,26 @@
       "variation": 1,
       "date": "2026-11-24T13:43:59.874Z",
       "id": "2u_G7t1mj38"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 3,
+      "nouveauStock": 4,
+      "variation": 1,
+      "date": "2026-11-25T15:10:03.970Z",
+      "id": "R-dRtLBYSf0"
+    },
+    {
+      "produitId": "2",
+      "produitNom": "Coffret Dattes Deglet Nour Fourrées & Chocolat",
+      "artisan": "Maison El Nakhil",
+      "ancienStock": 4,
+      "nouveauStock": 3,
+      "variation": -1,
+      "date": "11/25/2026, 10:46:40 PM",
+      "id": "U6PfJ2CKmPE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

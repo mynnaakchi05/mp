@@ -3,13 +3,11 @@
     <h2>Historique des stocks</h2>
     <p>Suivez toutes les entrées et sorties de stock de vos produits.</p>
   </div>
-
-  <div class="history-table">
+<div class="history-table">
     <h3>Les dernières opérations</h3>
-
-    @if (mouvementsTries().length === 0) {
+    @if (mouvements().length===0) {
       <p class="empty-message">Aucun mouvement enregistré.</p>
-    } @else {
+    } @else{
       <div class="table-responsive">
         <table>
           <thead>
@@ -22,24 +20,21 @@
               <th>Date</th>
             </tr>
           </thead>
-
-          <tbody>
-            @for (m of mouvementsTries(); track m.id) {
+         <tbody>
+            @for(m of mouvements().slice().reverse();track m.id){
               <tr>
-                <td class="product-name">{{ m.produitNom }}</td>
-                <td>{{ m.artisan }}</td>
-                <td>{{ m.ancienStock }}</td>
-                <td>{{ m.nouveauStock }}</td>
-
+                <td class="product-name">{{m.produitNom}}</td>
+                <td>{{m.artisan}}</td>
+                <td>{{m.ancienStock}}</td>
+                <td>{{m.nouveauStock}}</td>
                 <td>
-                  @if (m.variation > 0) {
-                    <span class="entry">+{{ m.variation }} Entrée</span>
-                  } @else {
-                    <span class="exit">{{ m.variation }} Sortie</span>
+                  @if(m.variation>0) {
+                    <span class="entry">+{{m.variation}} Entrée</span>
+                  }@else{
+                    <span class="exit">{{m.variation}} Sortie</span>
                   }
                 </td>
-
-                <td>{{ m.date | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{m.date | date:'dd/MM/yyyy HH:mm'}}</td>
               </tr>
             }
           </tbody>
@@ -48,3 +43,5 @@
     }
   </div>
 </div>
+
+

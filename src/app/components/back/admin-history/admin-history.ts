@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, computed } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product';
 import { DatePipe } from '@angular/common';
 
@@ -10,15 +10,9 @@ import { DatePipe } from '@angular/common';
   styleUrl: './admin-history.css'
 })
 export class AdminHistory implements OnInit {
-  private productService = inject(ProductService);
-  mouvements = this.productService.mouvements;
-  mouvementsTries = computed(() =>
-    [...this.mouvements()].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    )
-  );
-
-  ngOnInit(): void {
+  private productService=inject(ProductService);
+  mouvements=this.productService.mouvements;
+ ngOnInit(): void {
     this.productService.getMouvementsStock().subscribe();
   }
 }
